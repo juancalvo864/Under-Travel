@@ -1,0 +1,30 @@
+.form_login{
+    background-color: #8B7356;
+    border-radius: 10px;
+    width: 20rem;
+    color:white;
+}
+.container_form_login{
+    width: 50em;
+    display: flex;
+    justify-content: center;
+    background-color: #021b2b;
+    padding: 3rem;
+    border-radius: 5rem;
+}
+
+legend{
+    text-align: center;
+}
+
+.form_login div{
+    color: white;
+}
+form{
+    margin-bottom: 4rem;
+}
+
+main{
+    min-height: 100vh;
+    background-color: #ebdfcc;
+}

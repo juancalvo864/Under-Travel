@@ -19,7 +19,7 @@
                     <a href="index.php?route=login">Login</a>
                     <a href="index.php?route=users">Users</a>
                     <a href="index.php?route=signup">Sign up</a>
-                    <a href="index.php?route=home">Logout</a>
+                    <a href="index.php?route=logout">Logout</a>
                 </nav>
             </div>
             <div class="container_subtitulo">
@@ -38,7 +38,8 @@
                         $_GET['route'] == "login" ||
                         $_GET['route'] == "home" ||
                         $_GET['route'] == "signup"||
-                        $_GET['route'] == "users" 
+                        $_GET['route'] == "users" ||
+                        $_GET['route'] == "edit"
                     ){
                         include "views/pages/". $_GET["route"] .".php";
                     }else{
@@ -50,6 +51,7 @@
 
             ?>
         </section>
-    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/views/js/script.js"></script>
 </body>
 </html>

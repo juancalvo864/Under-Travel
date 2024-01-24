@@ -52,4 +52,78 @@ class FormsController{
             }
         }
     }
+
+    //Edicion de registro
+
+    
+        // Método para la edición
+        static public function ctrEditUser() {
+            if (isset($_POST["edit_name"])) {
+
+                if ($_POST["edit_password"] != "") {
+    
+                    $password = $_POST["edit_password"];
+                } else {
+    
+                    $password = $_POST["passwordActual"];
+                }
+    
+                $table = "registros";
+    
+                $data = array(
+                    "id" => $_POST["idUser"],
+                    "nombre" => $_POST["edit_name"],
+                    "apellido" => $_POST["edit_lastName"],
+                    "email" => $_POST["edit_email"],
+                    "password" => $password
+                );
+    
+                $respuesta = ModelForm::mdlEditRecord($table, $data);
+    
+                if ($respuesta == "ok") {
+    
+                    echo '<script>
+    
+                        if ( window.history.replaceState ) {
+    
+                            window.history.replaceState( null, null, window.location.href );
+    
+                        }
+    
+                        window.location = "index.php?route=users";
+    
+                    </script>';
+                }
+            }
+        }
+
+        //Eliminar usuario
+
+        static public function ctrDeleteUser(){
+            
+            if (isset($_POST["eliminarRegistro"])) {
+
+                $table = "registros";
+                $valor = $_POST["eliminarRegistro"];
+    
+                $respuesta = ModelForm::mdlDeleteUser($table, $valor);
+    
+                if ($respuesta == "ok") {
+    
+                    echo '<script>
+    
+                        if ( window.history.replaceState ) {
+    
+                            window.history.replaceState( null, null, window.location.href );
+    
+                        }
+    
+                        window.location = "index.php?route=users";
+    
+                    </script>';
+                }
+            }
+        
+    }
+    
 }

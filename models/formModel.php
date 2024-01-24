@@ -38,4 +38,42 @@ class ModelForm{
             return $stmt -> fetch();
         }
     }
-}
+
+    // Edicion de registros 
+    static public function mdlEditRecord($table, $data){
+            $stmt = Conexion::conectar()->prepare("UPDATE $table SET nombre = :nombre, apellido = :apellido, email = :email, password = :password WHERE id = :id");
+            
+            $stmt->bindParam(":nombre", $data["nombre"], PDO::PARAM_STR);
+            $stmt->bindParam(":apellido", $data["apellido"], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $data["email"], PDO::PARAM_STR);
+            $stmt->bindParam(":password", $data["password"], PDO::PARAM_STR);
+            $stmt->bindParam(":id", $data["id"], PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return "ok";
+            } else {
+                print_r(Conexion::conectar()->errorInfo());
+            }
+
+            $stmt->closeCursor();
+            $stmt = null;
+        }
+
+       //Eliminar usuario
+
+            static public function mdlDeleteUser($table,$id){
+                $stmt = Conexion::conectar()->prepare("DELETE FROM $table WHERE id = :id");
+                $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        
+                if ($stmt->execute()) {
+                    return "ok";
+                } else {
+                    print_r(Conexion::conectar()->errorInfo());
+                }
+        
+                $stmt->closeCursor();
+                $stmt = null;
+            }
+        }
+
+

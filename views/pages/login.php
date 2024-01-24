@@ -23,6 +23,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" name="login_password">
                     </div>
                     <?php 
+                        session_start();
                         require_once('./controllers/formsControllers.php');
                         $login = new FormsController;
                         $login -> ctrLogin();

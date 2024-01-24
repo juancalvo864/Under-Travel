@@ -17,7 +17,7 @@
                 <nav> 
                     <a href="index.php?route=home">Home</a>
                     <a href="index.php?route=login">Login</a>
-                    <a href="index.php?route=home">Users</a>
+                    <a href="index.php?route=users">Users</a>
                     <a href="index.php?route=signup">Sign up</a>
                     <a href="index.php?route=home">Logout</a>
                 </nav>

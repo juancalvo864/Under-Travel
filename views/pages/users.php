@@ -1,6 +1,8 @@
 <?php 
     require_once('./controllers/formsControllers.php');
-   /*  if(!isset($_SESSION["validarIngreso"])){
+    session_start();
+    
+    if(!isset($_SESSION["validarIngreso"])){
         echo '<script> window.location = "index.php?route=login";</script>';
         return;
     } else{
@@ -8,7 +10,7 @@
             echo '<script>window.location = "index.php?route=login";</script>';
             return;
         }
-    } */
+    }
     $usuarios = FormsController::ctrSelectRecord(null,null);
 ?>
 <!doctype html>

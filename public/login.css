@@ -1,3 +1,8 @@
+main{
+    min-height: 80vh;
+    background-color: black;
+}
+
 .form_login{
     background-color: #8B7356;
     border-radius: 10px;
@@ -22,9 +27,13 @@ legend{
 }
 form{
     margin-bottom: 4rem;
+    color:aliceblue
 }
 
-main{
-    min-height: 80vh;
-    background-color: #ebdfcc;
+.alert_login{
+    color: white !important;
+    background-color: rgba(255, 0, 0, 0.377);
+    text-align: center;
+    margin-bottom: 1rem;
+    
 }

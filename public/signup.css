@@ -26,5 +26,6 @@ form{
 
 main{
     min-height: 100vh;
-    background-color: #ebdfcc;
+    background-color: black;
+    color: white;
 }

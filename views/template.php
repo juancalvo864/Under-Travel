@@ -17,6 +17,7 @@
                 <nav> 
                     <a href="index.php?route=home">Home</a>
                     <a href="index.php?route=login">Login</a>
+                    <a href="index.php?route=home">Users</a>
                     <a href="index.php?route=signup">Sign up</a>
                     <a href="index.php?route=home">Logout</a>
                 </nav>
@@ -36,14 +37,15 @@
                         $_GET['route'] == "logout"||
                         $_GET['route'] == "login" ||
                         $_GET['route'] == "home" ||
-                        $_GET['route'] == "signup"
+                        $_GET['route'] == "signup"||
+                        $_GET['route'] == "users" 
                     ){
                         include "views/pages/". $_GET["route"] .".php";
                     }else{
                         include "pages/error404.php";
                     }
                 }else{
-                    include "pages/signup.php";
+                    include "pages/home.php";
                 }
 
             ?>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/home.css">
-    <title>home</title>
-</head>
-<body>
-    <main>
+ <main>
     <h1>Nuestros Tours</h1>
     <section class="container_cards">
         
@@ -31,5 +22,4 @@
         </div>
     </section>
     </main>
-</body>
-</html>
+

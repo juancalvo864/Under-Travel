@@ -1,10 +1,10 @@
 <?php
-require_once("./controllers/formsControllers.php");
-if (isset($_GET['id'])) {
-    $value = $_GET['id'];
-    $item = "id";
-    $usuario = FormsController::ctrSelectRecord($item,$value);
-}
+    require_once("./controllers/formsControllers.php");
+    if (isset($_GET['id'])) {
+        $value = $_GET['id'];
+        $item = "id";
+        $usuario = FormsController::ctrSelectRecord($item,$value);
+    }
     
 ?>
 <!doctype html>

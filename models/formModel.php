@@ -31,11 +31,11 @@ class ModelForm{
         } else {
             $stmt = Conexion::conectar() -> prepare("SELECT * ,DATE_FORMAT(fecha,'%d/%m/%Y') AS fecha FROM $table WHERE $item = :$item ORDER BY id DESC");
 
-            $stmt -> bindParam(":$item",$value,PDO::PARAM_STR);
+            $stmt -> bindParam(":". $item,$value,PDO::PARAM_STR);
 
             $stmt -> execute();
 
-            return $stmt -> fetch();
+            return $stmt -> fetch(PDO::FETCH_ASSOC);
         }
     }
 

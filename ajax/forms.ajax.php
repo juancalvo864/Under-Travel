@@ -1,6 +1,6 @@
 <?php
-    require_once "./controllers/formsControllers.php";
-    require_once "./models/formModel.php";
+    require_once "../controllers/formsControllers.php";
+    require_once "../models/formModel.php";
 
 // Clase AJAX 
 
@@ -9,6 +9,7 @@ class AjaxForm{
     public $validarEmail;
 
     public function ajaxValidarEmail(){
+        
         $item = "email";
         $value = $this->validarEmail;
 

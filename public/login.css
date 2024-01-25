@@ -25,7 +25,8 @@ legend{
 .form_login div{
     color: white;
 }
-form{
+
+.form_login_gral{
     margin-bottom: 4rem;
     color:aliceblue
 }

@@ -4,6 +4,7 @@ require_once "conexion.php";
 class ModelForm{
     //Insetar registros
     static public function mdlSignUp($table,$data){
+
         $stmt = Conexion::conectar() -> prepare("INSERT INTO $table(nombre,apellido,email,password) 
         VALUES(:nombre,:apellido,:email,:password)");
 
@@ -37,6 +38,9 @@ class ModelForm{
 
             return $stmt -> fetch(PDO::FETCH_ASSOC);
         }
+        $stmt->close();
+
+		$stmt = null;
     }
 
     // Edicion de registros 

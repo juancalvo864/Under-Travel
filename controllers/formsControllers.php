@@ -1,5 +1,5 @@
 <?php
- require_once("./models/formModel.php");
+// require_once("./models/formModel.php");
 class FormsController{
     //Registros
     static public function  ctrSignUp(){

@@ -6,19 +6,20 @@ $("#email_signup").change(function() {
 
     let datos = new FormData();
     datos.append("validarEmail", email);
+    console.log(datos);
 
     $.ajax({
-        url: "ajax/forms.ajax.php",
+        url:"ajax/forms.ajax.php",
         method: "POST",
-        data:datos,
-        cache:false,
-        contentType:false,
-        processData:false,
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
         dataType: "json",
         success: function(response) {
             if(response){
                 $("#email_signup").val("");
-                $("#email_signup").parent().after(`
+                $("#pass_signup").parent().after(`
                 <div class="alerta alerta-advertencia">
                     <strong>
                         ERROR:

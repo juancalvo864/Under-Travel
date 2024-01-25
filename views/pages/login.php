@@ -1,6 +1,6 @@
 
     <main class=" d-flex justify-content-center align-items-center ">
-        <form class="pt-5 " method="post">
+        <form class="pt-5 form_login_gral" method="post">
             <legend>Login</legend>
             <div class="container_form_login">
                 <div class="p-3 form_login ">

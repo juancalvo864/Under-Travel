@@ -4,16 +4,26 @@ class FormsController{
     //Registros
     static public function  ctrSignUp(){
         if(isset($_POST["signUp_name"])){
-            $table = "registros";
-            $data = array(
-                "nombre" => $_POST["signUp_name"],
-                "apellido" => $_POST["signUp_lastName"],
-                "email" => $_POST["signUp_email"],
-                "password" => $_POST["signUp_password"],
-            );
-            $response = ModelForm::mdlSignUp($table,$data);
-            return $response;
-        }
+            if(preg_match('/^[a-zA-Z]+$/',$_POST["signUp_name"]) && preg_match('/^\S+@\S+\.\S+$/', $_POST["signUp_email"])){
+                    $table = "registros";
+                    
+                   // $encriptarPassword = crypt($_POST["signUp_password"],'5fX0X/yejwrAo');
+                    $data = array(
+                        "nombre" => $_POST["signUp_name"],
+                        "apellido" => $_POST["signUp_lastName"],
+                        "email" => $_POST["signUp_email"],
+                        "password" => $_POST['signUp_password'],
+                    );
+                    $response = ModelForm::mdlSignUp($table,$data);
+                    return $response;
+                }
+            }else{
+                $response = "error";
+                return $response;
+            }
+
+           
+            
     }
 
     //Seleccion de Registro
@@ -31,6 +41,8 @@ class FormsController{
             $value = $_POST["login_email"];
 
             $response = ModelForm::mdlSelectRecord($table,$item,$value);
+
+            //$encriptarPassword = crypt($_POST["signUp_password"],'5fX0X/yejwrAo');
 
             if($response["email"] == $_POST["login_email"] && $response["password"] == $_POST["login_password"]){
                 $_SESSION["validarIngreso"] = "ok";
